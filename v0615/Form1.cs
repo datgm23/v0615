@@ -19,6 +19,22 @@ namespace v0615
         {
             label1.Left += vx1;
             label1.Top += vy1;
+            if (label1.Left < 0)
+            {
+                vx1 = Math.Abs(vx1);
+            }
+            else if (label1.Right > ClientSize.Width)
+            {
+                vx1 = -Math.Abs(vx1);
+            }
+            if (label1.Top < 0)
+            {
+                vy1 = Math.Abs(vy1);
+            }
+            else if (label1.Bottom > ClientSize.Height)
+            {
+                vy1 = -Math.Abs(vy1);
+            }
 
             label2.Left += vx2;
             label2.Top += vy2;
