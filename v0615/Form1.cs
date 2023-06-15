@@ -55,9 +55,24 @@ namespace v0615
                 vy2 = -Math.Abs(vy2);
             }
 
-
             label3.Left += vx3;
             label3.Top += vy3;
+            if (label3.Left < 0)
+            {
+                vx3 = Math.Abs(vx3);
+            }
+            else if (label3.Right > ClientSize.Width)
+            {
+                vx3 = -Math.Abs(vx3);
+            }
+            if (label3.Top < 0)
+            {
+                vy3 = Math.Abs(vy3);
+            }
+            else if (label3.Bottom > ClientSize.Height)
+            {
+                vy3 = -Math.Abs(vy3);
+            }
         }
     }
 }
