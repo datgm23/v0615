@@ -9,7 +9,7 @@ namespace v0615
         public Form1()
         {
             InitializeComponent();
-            
+
             vx[0] = rand.Next(-10, 11);
             vy[0] = rand.Next(-10, 11);
             vx[1] = rand.Next(-10, 11);
@@ -76,6 +76,18 @@ namespace v0615
             {
                 vy[2] = -Math.Abs(vy[2]);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+
+            for ( ; a < 10; a++)
+            {
+                MessageBox.Show($"{a}");
+            }
+
+            MessageBox.Show($"done {a}");
         }
     }
 }
