@@ -2,11 +2,13 @@ namespace v0615
 {
     public partial class Form1 : Form
     {
-        int ChrMax = 100;
+        static int ChrMax => 100;
+        static int SpeedMax => 10;
+
         static Random rand = new Random();
-        int[] vx = new int[1000];
-        int[] vy = new int[1000];
-        Label[] labels = new Label[1000];
+        int[] vx = new int[ChrMax];
+        int[] vy = new int[ChrMax];
+        Label[] labels = new Label[ChrMax];
 
         public Form1()
         {
@@ -14,13 +16,16 @@ namespace v0615
 
             for (int i = 0; i < ChrMax; i++)
             {
-                vx[i] = rand.Next(-10, 11);
-                vy[i] = rand.Next(-10, 11);
+                vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+                vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
 
                 labels[i] = new Label();
                 labels[i].Text = "ž";
                 labels[i].AutoSize = true;
                 Controls.Add(labels[i]);
+
+                labels[i].Left = rand.Next(ClientSize.Width - labels[i].Width);
+                labels[i].Top = rand.Next(ClientSize.Height - labels[i].Height);
             }
         }
 
